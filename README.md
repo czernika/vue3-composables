@@ -1,5 +1,7 @@
 # List of useful Vue3 composables
 
+[![Run tests](https://github.com/czernika/vue3-composables/actions/workflows/tests.yml/badge.svg)](https://github.com/czernika/vue3-composables/actions/workflows/tests.yml)
+
 ### useRefState
 
 **React-like state management for Vue 3**
@@ -9,8 +11,17 @@ Get `[state, setState]` pattern with functional updates. Perfect for those comin
 ```vue
 <script setup lang="ts">
 const [count, setCount] = useRefState(0)
-// Increment: setCount(count.value + 1)
-// Functional: setCount(prev => prev + 1)
+// Set value 
+setCount(1)
+
+// Functional
+setCount(prev => prev + 1)
+
+const [state, setState] = useRefState({ name: 'John', age: 42 })
+setState(prev => ({
+    ...prev,
+    age: 43,
+}))
 </script>
 ```
 
@@ -25,12 +36,16 @@ A clean wrapper around Vue's provide/inject with full TypeScript support and bet
 ```vue
 <!-- Parent -->
 <script setup>
-provide('user', { name: 'John' })
+interface User {
+    name: string
+}
+
+provide<User>('user', { name: 'John' })
 </script>
 
-<!-- Child -->
+<!-- Any nested child -->
 <script setup>
-const user = useProvider('user') // Type-safe!
+const user = useProvider<User>('user')
 </script>
 ```
 
