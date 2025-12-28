@@ -6,6 +6,11 @@
 			"dependsOn": ["^build"],
 			"inputs": ["$TURBO_DEFAULT$"],
 			"outputs": ["dist/**"]
+		},
+    "test": {
+			"dependsOn": ["^build"],
+			"inputs": ["$TURBO_DEFAULT$", "**/*.test.ts"],
+			"cache": true
 		}
 	}
 }

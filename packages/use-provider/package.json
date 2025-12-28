@@ -1,26 +1,31 @@
 {
 	"name": "@czernika/use-provider",
-  "private": false,
-  "version": "1.0.0",
+	"private": false,
+	"version": "1.0.0",
 	"license": "MIT",
-  "type": "module",
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
-  "scripts": {
-    "build": "vite build",
-    "prepublishOnly": "bun run build"
-  },
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"scripts": {
+		"build": "vite build",
+		"test": "vitest run",
+		"prepublishOnly": "bun run build"
+	},
 	"dependencies": {
 		"vue": "^3.5.26"
 	},
-  "publishConfig": {
-    "access": "public"
-  }
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"happy-dom": "^20.0.11",
+		"vitest": "^4.0.16"
+	}
 }

@@ -33,5 +33,13 @@
 				"organizeImports": "on"
 			}
 		}
-	}
+	},
+  "overrides": [
+    {
+      "includes": ["**/*.json", "**/*.jsonc", "**/*.yml"],
+      "formatter": {
+        "indentWidth": 2
+      }
+    }
+  ]
 }

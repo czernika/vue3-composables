@@ -59,7 +59,7 @@ import { useRefState } from '@czernika/use-ref-state'
 const [count, setCount] = useRefState(0)
 
 // Update state
-const increment = () => setCount(prev => prev++)
+const increment = () => setCount(prev => ++prev)
 const reset = () => setCount(0)
 </script>
 
