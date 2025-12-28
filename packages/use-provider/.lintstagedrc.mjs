@@ -1,5 +1,5 @@
 export default {
-    '**/*.{ts}': [
+    '**/*.ts': [
         'bunx --bun biome format --write',
         'bunx --bun biome lint --write',
     ],
