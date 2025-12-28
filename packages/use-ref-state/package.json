@@ -1,0 +1,23 @@
+{
+	"name": "@czernika/use-ref-state",
+  "private": false,
+  "version": "1.0.0",
+	"license": "MIT",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "bun run build"
+  },
+	"dependencies": {
+		"vue": "^3.5.26"
+	}
+}
